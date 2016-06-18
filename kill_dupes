@@ -84,7 +84,7 @@ def get_track_ids(tracks):
         track_ids.append(track['id'])
     return track_ids
 
-
+print "Running kill_dupes"
 api = Mobileclient()
 logged_in = api.login('username', 'password', Mobileclient.FROM_MAC_ADDRESS)
 
@@ -104,3 +104,5 @@ if logged_in:
     else:
         print "I didn't find any duplicate tracks."
     print "Thank you!"
+else:
+    print "Failed to login. You may need to disable 2 factor auth if you have it enabled."
